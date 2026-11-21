@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maati Agro – Seeds, soil care and farm supplies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F1F4EA; --surface:#E4EAD6; --ink:#2B1F17; --muted:#5C5247;
+  --soil:#4A3326; --clay:#7A5239; --paddy:#4F7A28; --mustard:#E3AE1C; --on-dark:#F1F4EA;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1C1511; --surface:#2A1F18; --ink:#EFE9DD; --muted:#B5A999;
+  --soil:#120D0A; --clay:#3A271C; --paddy:#8FBF58; --mustard:#E9B92E; --on-dark:#EFE9DD;}}
+:root[data-theme="dark"]{--bg:#1C1511; --surface:#2A1F18; --ink:#EFE9DD; --muted:#B5A999;--soil:#120D0A; --clay:#3A271C; --paddy:#8FBF58; --mustard:#E9B92E; --on-dark:#EFE9DD;}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.6 "Hind Siliguri",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","Hind Siliguri",system-ui,sans-serif;line-height:1.05;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--mustard);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+nav b{font:800 22px "Bricolage Grotesque",sans-serif}
+nav div{display:flex;gap:22px}
+nav a{text-decoration:none;font-weight:500}
+nav a:hover{text-decoration:underline}
+
+/* hero: soil strata */
+.hero{background:var(--soil);color:var(--on-dark);position:relative;overflow:hidden}
+.hero .wrap{padding-top:8px;padding-bottom:0}
+.hero nav a{color:var(--on-dark)}
+.big{font:800 clamp(110px,26vw,300px)/.9 "Hind Siliguri",sans-serif;color:var(--mustard);margin:24px 0 0;letter-spacing:-.02em}
+.hero h1{font-size:clamp(30px,5vw,54px);font-weight:700;max-width:16ch;margin:16px 0 18px}
+.hero p{max-width:46ch;color:color-mix(in srgb,var(--on-dark) 82%,transparent);margin:0 0 28px}
+.btn{display:inline-block;background:var(--mustard);color:#2B1F17;font-weight:600;padding:14px 26px;border-radius:999px;text-decoration:none;border:0;font-size:17px;cursor:pointer;font-family:inherit}
+.btn:hover{filter:brightness(1.08)}
+.strata{display:flex;flex-direction:column;margin-top:56px}
+.strata i{display:block;height:20px}
+.strata i:nth-child(1){background:var(--clay)}
+.strata i:nth-child(2){background:#5E4130;height:34px;clip-path:polygon(0 30%,12% 0,30% 40%,55% 10%,78% 45%,100% 5%,100% 100%,0 100%)}
+.strata i:nth-child(3){background:var(--paddy);height:14px}
+@media (prefers-reduced-motion:no-preference){.big{animation:rise .9s ease-out both}@keyframes rise{from{transform:translateY(40px);opacity:0}}}
+
+section{padding:76px 0}
+h2{font-size:clamp(30px,4.4vw,46px);margin-bottom:14px}
+.lead{max-width:56ch;color:var(--muted);margin:0 0 36px}
+.offer{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0;border-top:3px solid var(--soil)}
+.offer div{padding:22px 22px 26px 0}
+.offer h3{font-size:24px;margin-bottom:8px}
+.offer p{margin:0;color:var(--muted)}
+.band{background:var(--surface)}
+.seasons{display:grid;gap:0;border-left:4px solid var(--paddy)}
+.seasons div{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:18px 0 18px 24px;border-bottom:1px solid color-mix(in srgb,var(--ink) 18%,transparent)}
+.seasons b{font:700 22px "Bricolage Grotesque",sans-serif}
+.seasons span{color:var(--muted)}
+@media(max-width:560px){.seasons div{grid-template-columns:1fr;gap:2px}}
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
+@media(max-width:760px){.about{grid-template-columns:1fr;gap:24px}}
+.facts{margin:0;padding:0;list-style:none}
+.facts li{padding:14px 0;border-bottom:1px solid color-mix(in srgb,var(--ink) 18%,transparent)}
+.facts b{display:block;font:700 20px "Bricolage Grotesque",sans-serif}
+form{display:grid;gap:14px;max-width:520px}
+label{display:grid;gap:6px;font-weight:500}
+input,select,textarea{font:inherit;padding:12px 14px;border:2px solid color-mix(in srgb,var(--ink) 30%,transparent);border-radius:10px;background:var(--bg);color:var(--ink)}
+textarea{min-height:110px;resize:vertical}
+#ok{display:none;color:var(--paddy);font-weight:600}
+.contact{background:var(--soil);color:var(--on-dark)}
+.contact .lead{color:color-mix(in srgb,var(--on-dark) 78%,transparent)}
+.contact input,.contact select,.contact textarea{background:color-mix(in srgb,var(--on-dark) 8%,transparent);color:var(--on-dark);border-color:color-mix(in srgb,var(--on-dark) 35%,transparent)}
+.contact option{color:#2B1F17}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+@media(max-width:760px){.cgrid{grid-template-columns:1fr;gap:32px}}
+.cgrid p{margin:0 0 10px}
+footer{background:var(--soil);color:color-mix(in srgb,var(--on-dark) 65%,transparent);padding:22px 0 28px;font-size:15px;border-top:1px solid color-mix(in srgb,var(--on-dark) 15%,transparent)}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <nav>
+      <b>Maati Agro</b>
+      <div><a href="#products">Products</a><a href="#seasons">Seasons</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+    </nav>
+    <p class="big" aria-hidden="true" lang="bn">মাটি</p>
+    <h1>Healthy soil grows better harvests.</h1>
+    <p>Maati Agro supplies quality seeds, fertilizer and farm tools to growers across Bangladesh, with advice on what your soil actually needs.</p>
+    <a class="btn" href="#contact">Ask for a quote</a>
+  </div>
+  <div class="strata" aria-hidden="true"><i></i><i></i><i></i></div>
+</header>
+
+<main>
+<section id="products">
+  <div class="wrap">
+    <h2>What we supply</h2>
+    <p class="lead">Everything a farm needs for the season, from one trusted source.</p>
+    <div class="offer">
+      <div><h3>Seeds</h3><p>Tested rice, vegetable, pulse and oilseed seeds with germination rates printed on the pack.</p></div>
+      <div><h3>Fertilizer</h3><p>Urea, TSP, MoP and organic compost, sold by the bag or in bulk for larger fields.</p></div>
+      <div><h3>Crop protection</h3><p>Approved pesticides and bio-controls, with dosage guidance for each crop.</p></div>
+      <div><h3>Farm tools</h3><p>Sprayers, irrigation fittings, hand tools and storage sacks.</p></div>
+      <div><h3>Soil testing</h3><p>Send a sample and get a plain-language report on pH, nutrients and what to add.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="seasons" class="band">
+  <div class="wrap">
+    <h2>Plan around the season</h2>
+    <p class="lead">Tell us your crop and land, and we will prepare your order before planting starts.</p>
+    <div class="seasons">
+      <div><b>Aus</b><span>Pre-monsoon rice, sown March to April. Short-duration seed and early fertilizer.</span></div>
+      <div><b>Aman</b><span>Monsoon rice, transplanted July to August. Our busiest season for seed and urea.</span></div>
+      <div><b>Boro</b><span>Dry-season rice, planted December to January. Irrigation supplies and TSP in demand.</span></div>
+      <div><b>Rabi</b><span>Winter vegetables, pulses and mustard, sown October to December.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <h2>Rooted in the soil we serve</h2>
+      <p>“Maati” means soil, and it is where every farm decision starts. We are a local agro-supply business that believes better advice leads to better yields, lower costs and land that stays productive for the next generation.</p>
+      <p>Visit us, call, or send a message. We will recommend only what your crop needs.</p>
+    </div>
+    <ul class="facts">
+      <li><b>Honest guidance</b>We tell you when you do not need a product.</li>
+      <li><b>Fair, clear pricing</b>Quotes in writing before you order.</li>
+      <li><b>Delivery to your field</b>Bulk orders delivered across nearby districts.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap cgrid">
+    <div>
+      <h2>Ask for a quote</h2>
+      <p class="lead">Tell us what you grow and what you need. We reply within one working day.</p>
+      <p><b>Mobile:</b> <a href="tel:+8801580380421">01580380421</a></p>
+      <p><b>Email:</b> <a href="mailto:maatiagro@gmail.com">maatiagro@gmail.com</a></p>
+      <p><b>Address:</b> House-162, Village-Chandpur, Post-Halanji-7440, Thana-Manirampur, District-Jashore, Bangladesh</p>
+    </div>
+    <form id="f">
+      <label>Your name<input name="n" required autocomplete="name"></label>
+      <label>Phone number<input name="p" type="tel" required autocomplete="tel"></label>
+      <label>I need
+        <select name="t"><option>Seeds</option><option>Fertilizer</option><option>Crop protection</option><option>Farm tools</option><option>Soil testing</option></select>
+      </label>
+      <label>Details<textarea name="m" placeholder="Crop, land size, quantity"></textarea></label>
+      <button class="btn" type="submit">Send request</button>
+      <p id="ok" role="status">Thank you. We will call you within one working day.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 Maati Agro. All rights reserved.</div></footer>
+
+<script>
+document.getElementById('f').addEventListener('submit',function(e){
+  e.preventDefault();
+  document.getElementById('ok').style.display='block';
+  this.reset();
+});
+</script>
+</body>
+</html>
